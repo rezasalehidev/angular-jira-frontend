@@ -1,6 +1,8 @@
-# TaskForge AI
+# Angular Jira
 
-A modern project and task management UI built with **Angular 21** — dashboard, Kanban board, projects, team, analytics, and an AI assistant screen. Data is mocked in-memory so you can explore the full UX without a backend.
+A Jira-style project and task management UI built with **Angular 21** — dashboard, Kanban board, projects, team, analytics, and an AI assistant. Mock data runs in-memory, so you can explore the full UX without a backend.
+
+**Live demo:** [https://angular-jira.vercel.app](https://angular-jira.vercel.app/dashboard)
 
 > Repo: [rezasalehidev/angular-jira](https://github.com/rezasalehidev/angular-jira)
 
@@ -82,7 +84,9 @@ Routes are lazy-loaded from `src/app/app.routes.ts` (dashboard, projects, tasks,
 
 ## Deploy on Vercel
 
-This repo includes a `vercel.json` configured for an Angular SPA:
+Deployed at **[angular-jira.vercel.app](https://angular-jira.vercel.app/dashboard)**.
+
+`vercel.json` is set up for an Angular SPA:
 
 | Setting | Value |
 |---------|--------|
@@ -90,12 +94,6 @@ This repo includes a `vercel.json` configured for an Angular SPA:
 | Build | `pnpm build` |
 | Output | `dist/demo/browser` |
 | Rewrites | All routes → `/index.html` |
-
-**Steps**
-
-1. Import [rezasalehidev/angular-jira](https://github.com/rezasalehidev/angular-jira) in the [Vercel dashboard](https://vercel.com/new).
-2. Confirm framework preset / build settings match the table above (or leave `vercel.json` as-is).
-3. Deploy.
 
 ---
 
