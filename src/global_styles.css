@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme tokens */
+    --surface: 255 255 255;
+    --surface-hover: 249 250 251;
+    --surface-active: 243 244 246;
+    --surface-raised: 255 255 255;
+    --surface-overlay: 255 255 255;
+
+    --border: 229 231 235;
+    --border-strong: 209 213 219;
+
+    --text-primary: 17 24 39;
+    --text-secondary: 75 85 99;
+    --text-tertiary: 156 163 175;
+    --text-inverse: 255 255 255;
+
+    --accent: 79 70 229;
+    --accent-hover: 67 56 202;
+    --accent-soft: 238 242 255;
+
+    --success: 16 185 129;
+    --success-soft: 209 250 229;
+
+    --warning: 245 158 11;
+    --warning-soft: 254 243 199;
+
+    --danger: 239 68 68;
+    --danger-soft: 254 226 226;
+  }
+
+  .dark {
+    --surface: 15 15 17;
+    --surface-hover: 26 26 30;
+    --surface-active: 38 38 42;
+    --surface-raised: 24 24 27;
+    --surface-overlay: 10 10 11;
+
+    --border: 38 38 42;
+    --border-strong: 63 63 70;
+
+    --text-primary: 237 237 240;
+    --text-secondary: 161 161 170;
+    --text-tertiary: 113 113 122;
+    --text-inverse: 15 15 17;
+
+    --accent: 129 140 248;
+    --accent-hover: 165 180 252;
+    --accent-soft: 30 27 75;
+
+    --success: 52 211 153;
+    --success-soft: 20 45 40;
+
+    --warning: 251 191 36;
+    --warning-soft: 45 38 20;
+
+    --danger: 248 113 113;
+    --danger-soft: 45 25 30;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-text-primary font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-brand-500/20;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-strong rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-tertiary;
+  }
+
+  /* Focus visible */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-surface;
+  }
+
+  /* Remove default focus ring for mouse users */
+  :focus:not(:focus-visible) {
+    @apply outline-none ring-0;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-raised border border-border rounded-xl shadow-sm;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-150 ease-spring disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-hover shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply btn bg-surface-hover text-text-primary hover:bg-surface-active border border-border;
+  }
+
+  .btn-ghost {
+    @apply btn text-text-secondary hover:text-text-primary hover:bg-surface-hover;
+  }
+
+  .btn-danger {
+    @apply btn bg-danger text-white hover:bg-danger/90;
+  }
+
+  .input {
+    @apply w-full px-3 py-1.5 text-sm bg-surface border border-border rounded-lg
+      text-text-primary placeholder:text-text-tertiary
+      focus:border-accent focus:ring-1 focus:ring-accent
+      transition-colors duration-150;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-2xs font-medium rounded-md;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-surface-active rounded;
+  }
+  .skeleton::after {
+    @apply absolute inset-0 -translate-x-full;
+    content: "";
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(var(--surface-hover)),
+      transparent
+    );
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

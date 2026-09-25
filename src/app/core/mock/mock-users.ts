@@ -1,0 +1,68 @@
+import { User } from "../models";
+
+export const mockUsers: User[] = [
+  {
+    id: "u1",
+    name: "Sarah Chen",
+    email: "sarah.chen@taskforge.ai",
+    avatarUrl: "",
+    role: "Product Lead",
+    online: true,
+  },
+  {
+    id: "u2",
+    name: "Marcus Reid",
+    email: "marcus.reid@taskforge.ai",
+    avatarUrl: "",
+    role: "Senior Engineer",
+    online: true,
+  },
+  {
+    id: "u3",
+    name: "Elena Vasquez",
+    email: "elena.vasquez@taskforge.ai",
+    avatarUrl: "",
+    role: "UX Designer",
+    online: false,
+  },
+  {
+    id: "u4",
+    name: "David Kim",
+    email: "david.kim@taskforge.ai",
+    avatarUrl: "",
+    role: "Backend Engineer",
+    online: true,
+  },
+  {
+    id: "u5",
+    name: "Priya Sharma",
+    email: "priya.sharma@taskforge.ai",
+    avatarUrl: "",
+    role: "Frontend Engineer",
+    online: true,
+  },
+  {
+    id: "u6",
+    name: "James Wilson",
+    email: "james.wilson@taskforge.ai",
+    avatarUrl: "",
+    role: "DevOps Engineer",
+    online: false,
+  },
+  {
+    id: "u7",
+    name: "Aisha Patel",
+    email: "aisha.patel@taskforge.ai",
+    avatarUrl: "",
+    role: "QA Engineer",
+    online: true,
+  },
+  {
+    id: "u8",
+    name: "Tom Brucker",
+    email: "tom.brucker@taskforge.ai",
+    avatarUrl: "",
+    role: "Product Manager",
+    online: false,
+  },
+];
